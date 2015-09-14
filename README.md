@@ -1,0 +1,1 @@
+Sample CollectionView application for Excel-like layout.
