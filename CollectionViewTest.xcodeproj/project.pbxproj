@@ -14,6 +14,7 @@
 		9BC0A0DA1BA77A7100BCD5E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC0A0D91BA77A7100BCD5E0 /* Images.xcassets */; };
 		9BC0A0DD1BA77A7100BCD5E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC0A0DB1BA77A7100BCD5E0 /* LaunchScreen.xib */; };
 		9BC0A0E91BA77A7100BCD5E0 /* CollectionViewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0A0E81BA77A7100BCD5E0 /* CollectionViewTestTests.m */; };
+		9BC0A0F41BA77F6500BCD5E0 /* TableCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0A0F31BA77F6500BCD5E0 /* TableCollectionViewLayout.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		9BC0A0E21BA77A7100BCD5E0 /* CollectionViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC0A0E71BA77A7100BCD5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BC0A0E81BA77A7100BCD5E0 /* CollectionViewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTestTests.m; sourceTree = "<group>"; };
+		9BC0A0F21BA77F6500BCD5E0 /* TableCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCollectionViewLayout.h; sourceTree = "<group>"; };
+		9BC0A0F31BA77F6500BCD5E0 /* TableCollectionViewLayout.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TableCollectionViewLayout.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				9BC0A0D91BA77A7100BCD5E0 /* Images.xcassets */,
 				9BC0A0DB1BA77A7100BCD5E0 /* LaunchScreen.xib */,
 				9BC0A0CC1BA77A7100BCD5E0 /* Supporting Files */,
+				9BC0A0F21BA77F6500BCD5E0 /* TableCollectionViewLayout.h */,
+				9BC0A0F31BA77F6500BCD5E0 /* TableCollectionViewLayout.mm */,
 			);
 			path = CollectionViewTest;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				9BC0A0D51BA77A7100BCD5E0 /* ViewController.m in Sources */,
 				9BC0A0D21BA77A7100BCD5E0 /* AppDelegate.m in Sources */,
 				9BC0A0CF1BA77A7100BCD5E0 /* main.m in Sources */,
+				9BC0A0F41BA77F6500BCD5E0 /* TableCollectionViewLayout.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

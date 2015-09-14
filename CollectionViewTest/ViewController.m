@@ -24,4 +24,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark UICollectionViewDataSource
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1000;
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if(section<1000) return 65535;
+    return 0;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    UILabel* label = (UILabel*)[cell viewWithTag:1212];
+    label.text = [NSString stringWithFormat:@"%ld/%ld",(long)indexPath.section,indexPath.row];
+    return cell;
+}
+#pragma mark UIColectionViewDelegate
+
 @end
