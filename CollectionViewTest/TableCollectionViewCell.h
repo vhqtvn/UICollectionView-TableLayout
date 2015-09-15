@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+enum TableCollectionViewCellBordersMask
+{
+    TableCollectionViewCellBorderLeft=1,
+    TableCollectionViewCellBorderRight=2,
+    TableCollectionViewCellBorderUp=4,
+    TableCollectionViewCellBorderDown=8,
+};
+
 @interface TableCollectionViewCell : UICollectionViewCell
 @property(retain,nonatomic) NSString* text;
 @property(nonatomic) NSIndexPath* indexPath;
+@property(nonatomic) int borderMask;
 -(void)newOccupied;
 -(BOOL)checkIfNeedUpdate;
 @end

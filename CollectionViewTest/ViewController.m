@@ -10,8 +10,8 @@
 #import "TableCollectionViewLayout.h"
 #import "TableCollectionViewCell.h"
 
-#define MAX_COLS 1000
-#define MAX_ROWS 65000
+#define MAX_COLS 128
+#define MAX_ROWS 2000
 
 @interface ViewController ()
 {
@@ -74,6 +74,12 @@
     TableCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     cell.text = [NSString stringWithFormat:@"%d",value[indexPath.section][indexPath.row]];
     cell.indexPath = indexPath;
+    int borders = 0;
+    if(indexPath.row%5==0) borders|=TableCollectionViewCellBorderUp;
+    if(indexPath.row%5==4) borders|=TableCollectionViewCellBorderDown;
+    if(indexPath.section%6==0) borders|=TableCollectionViewCellBorderLeft;
+    if(indexPath.section%6==5) borders|=TableCollectionViewCellBorderRight;
+    cell.borderMask = borders;
     [cell setNeedsDisplay];
     return cell;
 }

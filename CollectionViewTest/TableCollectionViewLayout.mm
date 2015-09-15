@@ -23,7 +23,7 @@
 {
     [super prepareLayout];
     width = 0;
-    int iw=self.collectionView.frame.size.width/30;
+    int iw=self.collectionView.frame.size.width/15;
     int ih=self.collectionView.frame.size.height/30;
     static int widths[]={iw,iw-1,iw+1};
     columnWidths.resize(self.collectionView.numberOfSections);

@@ -41,6 +41,29 @@
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     [attributes setObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
     
-    [self.text drawInRect:rect withAttributes:attributes];
+    [self.text drawInRect:CGRectInset(rect, 5, 5) withAttributes:attributes];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor] );
+    if(self.borderMask&TableCollectionViewCellBorderLeft)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect));
+    if(self.borderMask&TableCollectionViewCellBorderRight)
+        CGContextMoveToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    if(self.borderMask&TableCollectionViewCellBorderUp)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect));
+    if(self.borderMask&TableCollectionViewCellBorderDown)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    CGContextSetLineWidth(context, 2.0);
+    CGContextStrokePath(context);
+    if(~self.borderMask&TableCollectionViewCellBorderLeft)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect));
+    if(~self.borderMask&TableCollectionViewCellBorderRight)
+        CGContextMoveToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    if(~self.borderMask&TableCollectionViewCellBorderUp)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect));
+    if(~self.borderMask&TableCollectionViewCellBorderDown)
+        CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect)), CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    CGContextSetLineWidth(context, 0.5);
+    CGContextStrokePath(context);
 }
 @end
