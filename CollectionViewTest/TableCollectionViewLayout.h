@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TableCollectionViewLayout : UICollectionViewLayout
-
+@property() int cellDenseFactor;
 @end

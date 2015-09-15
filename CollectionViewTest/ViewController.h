@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIScrollViewDelegate>
 @property(retain,nonatomic) IBOutlet UICollectionView* collectionView;
 
 @end
